@@ -21,4 +21,7 @@ from webapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contacts/', views.ContactBook.as_view()), # create new url for each view
+    path('contacts/<int:pk>/', views.SingleContact.as_view()), # create new url for each view
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
